@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audit 56 bài tin-tuc 24/09–20/10/2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600&family=Lora:wght@400&display=swap">
+<style>
+:root {
+  --color-bg: #f7f8fa; --color-panel: #ffffff; --color-fg: #1d2330; --color-fg-muted: #5d6676;
+  --color-border-line: #e1e5ec; --color-ok: #177245; --color-warn: #a35a00; --color-bad: #b42318;
+  --cds-chart-grid: #e9ecf2; --cds-chart-axis: #c3c9d4; --cds-chart-reference: #4b6bdc; --cds-chart-muted: #c6ccd8;
+  --cds-chart-status-critical: #d14343; --cds-surface-popover: #ffffff; --cds-border: #d5dae3;
+  --cds-shadow-popover: 0 4px 16px rgba(20, 30, 50, .12); --cds-text-secondary: #5d6676;
+  --s1: #3f63d8; --s2: #e0832f;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --color-bg: #12151b; --color-panel: #1a1e26; --color-fg: #e6e9ef; --color-fg-muted: #9aa3b2;
+  --color-border-line: #2b313c; --color-ok: #4cc38a; --color-warn: #f0a44b; --color-bad: #f07a6e;
+  --cds-chart-grid: #262c36; --cds-chart-axis: #3a4250; --cds-chart-reference: #7f9bff; --cds-chart-muted: #444c5a;
+  --cds-chart-status-critical: #f07a6e; --cds-surface-popover: #222733; --cds-border: #363d4a;
+  --cds-shadow-popover: 0 4px 16px rgba(0, 0, 0, .45); --cds-text-secondary: #9aa3b2;
+  --s1: #7f9bff; --s2: #f0a44b; color-scheme: dark;
+} }
+:root {
+  --font-anthropic-sans: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-anthropic-serif: "Lora", Georgia, "Times New Roman", serif;
+  --cds-font-size-caption: .8125rem; --cds-font-size-body: .9375rem; --cds-font-size-heading: 1.0625rem; --cds-font-size-title: 1.875rem;
+  --cds-font-weight-medium: 600;
+  --cds-gap-xs: .25rem; --cds-gap-sm: .5rem; --cds-gap-md: 1rem; --cds-gap-lg: 1.5rem; --cds-gap-xl: 2.25rem;
+  --cds-pad-xs: .25rem; --cds-pad-sm: .5rem; --cds-pad-md: .75rem; --cds-pad-lg: 1.25rem; --cds-pad-xl: 2rem;
+  --cds-radius: 10px; --cds-dur-slow: .3s; --cds-ease-out: cubic-bezier(.2, .8, .2, 1);
+}
+html, body { margin: 0; background: var(--color-bg); color: var(--color-fg); font-family: var(--font-anthropic-sans); font-size: 15px; line-height: 1.5; }
+#dash-root { padding-block: 2rem 3rem; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.au-foot { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); margin: 0; }
+
+
+.au { display: flex; flex-direction: column; gap: var(--cds-gap-xl); font-family: var(--font-anthropic-sans); max-width: 78rem; margin-inline: auto; }
+.au-head { display: flex; flex-direction: column; gap: var(--cds-gap-sm); }
+.au-title { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); margin: 0; text-wrap: balance; }
+.au-lede { color: var(--color-fg-muted); font-size: var(--cds-font-size-body); margin: 0; max-width: 62ch; }
+.au-section { display: flex; flex-direction: column; gap: var(--cds-gap-md); }
+.au-h2 { font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); margin: 0; }
+.au-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: var(--cds-gap-md); }
+.au-card { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); display: flex; flex-direction: column; gap: var(--cds-gap-sm); min-width: 0; }
+.au-card-title { font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); margin: 0; }
+.au-note { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); margin: 0; }
+.au-big { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); font-variant-numeric: tabular-nums; line-height: 1.1; }
+.au-good { color: var(--color-ok); }
+.au-bad { color: var(--color-bad); }
+.au-warn { color: var(--color-warn); }
+.au-kv { display: grid; grid-template-columns: auto 1fr; gap: var(--cds-gap-xs) var(--cds-gap-md); font-size: var(--cds-font-size-caption); font-variant-numeric: tabular-nums; }
+.au-kv dt { color: var(--color-fg-muted); }
+.au-kv dd { margin: 0; }
+.au-pill { display: inline-block; padding: 0.1rem 0.5rem; border-radius: 999px; font-size: var(--cds-font-size-caption); border: 1px solid var(--color-border-line); }
+.au-chart { position: relative; min-height: 260px; }
+.au-chart-sm { position: relative; min-height: 200px; }
+.au-tip { position: absolute; pointer-events: none; background: var(--cds-surface-popover); border: 1px solid var(--cds-border); border-radius: var(--cds-radius); box-shadow: var(--cds-shadow-popover); padding: var(--cds-pad-xs) var(--cds-pad-sm); font-size: var(--cds-font-size-caption); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.au-tip-date { color: var(--cds-text-secondary); }
+.au-legend { display: flex; flex-wrap: wrap; gap: var(--cds-gap-md); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.au-sw { display: inline-block; width: 0.7rem; height: 0.7rem; border-radius: 2px; margin-right: 0.35rem; vertical-align: -1px; }
+.au-tablebox { overflow: auto; max-height: 34rem; }
+.au-table { width: 100%; border-collapse: collapse; font-size: var(--cds-font-size-caption); font-variant-numeric: tabular-nums; }
+.au-table th, .au-table td { text-align: left; padding: var(--cds-pad-xs) var(--cds-pad-sm); border-bottom: 1px solid var(--color-border-line); vertical-align: top; }
+.au-table th { position: sticky; top: 0; background: var(--color-panel); font-weight: var(--cds-font-weight-medium); white-space: nowrap; }
+.au-table td.num, .au-table th.num { text-align: right; }
+.au-table th button { all: unset; cursor: pointer; }
+.au-table th button:focus-visible { outline: 2px solid var(--color-fg); outline-offset: 2px; }
+.au-slug { max-width: 22rem; overflow-wrap: anywhere; }
+.au-tools { display: flex; flex-wrap: wrap; gap: var(--cds-gap-sm); align-items: center; }
+.au-tools input, .au-tools select { font: inherit; font-size: var(--cds-font-size-caption); padding: var(--cds-pad-xs) var(--cds-pad-sm); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: var(--color-bg); color: var(--color-fg); }
+.au-tools input { flex: 1 1 14rem; min-width: 0; }
+.au-bars { display: flex; flex-direction: column; gap: var(--cds-gap-xs); }
+.au-bar-row { display: grid; grid-template-columns: minmax(9rem, 14rem) 1fr 2.5rem; gap: var(--cds-gap-sm); align-items: center; font-size: var(--cds-font-size-caption); }
+.au-bar-track { height: 0.9rem; }
+.au-bar-fill { height: 100%; border-radius: 4px; }
+.au-method { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); max-width: 70ch; display: flex; flex-direction: column; gap: var(--cds-gap-xs); }
+.au-method p { margin: 0; }
+[data-dash-source-state=empty] { color: transparent; }
+[data-dash-source-state=refreshing] { opacity: .5; transition: opacity var(--cds-dur-slow); }
+.au-fail { display: flex; align-items: center; justify-content: center; gap: var(--cds-gap-xs); min-height: inherit; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+.au-fail::before { content: ""; width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--color-bad); }
+@media (max-width: 640px) { .au-hide-sm { display: none; } .au-bar-row { grid-template-columns: 8rem 1fr 2rem; } }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+</head>
+<body>
+<div id="dash-root">
+<script>
+(function () {
+  const DATA = {"items": [{"slug": "suy-than-co-uong-duoc-dong-trung-ha-thao", "url": "https://dangcapphaidep.vn/tin-tuc/suy-than-co-uong-duoc-dong-trung-ha-thao", "dot": "Đợt 1 (24–29/09)", "published": "2026-09-24", "after_days": "29", "impr_before": "15.5", "impr_after": "28.4", "clicks_before": "0.17", "clicks_after": "0.21", "pos_before": "8.0", "pos_after": "7.0", "sessions_before": "0.24", "sessions_after": "0.38", "crawl": "Đã crawl lại", "last_crawl": "2026-10-18", "danh_gia": "Tăng"}, {"slug": "cach-lam-trang-da-toan-than-cho-hoc-sinh", "url": "https://dangcapphaidep.vn/tin-tuc/cach-lam-trang-da-toan-than-cho-hoc-sinh", "dot": "Đợt 1 (24–29/09)", "published": "2026-09-25", "after_days": "28", "impr_before": "99.0", "impr_after": "75.9", "clicks_before": "1.71", "clicks_after": "0.89", "pos_before": "5.7", "pos_after": "4.8", "sessions_before": "2.04", "sessions_after": "1.43", "crawl": "Đã crawl lại", "last_crawl": "2026-10-21", "danh_gia": "Số nhỏ, chưa kết luận"}, {"slug": "co-nen-dung-thuoc-bay-mau-tri-mun", "url": "https://dangcapphaidep.vn/tin-tuc/co-nen-dung-thuoc-bay-mau-tri-mun", "dot": "Đợt 1 (24–29/09)", "published": "2026-09-25", "after_days": "28", "impr_before": "85.9", "impr_after": "27.8", "clicks_before": "0.18", "clicks_after": "0.07", "pos_before": "8.6", "pos_after": "8.1", "sessions_before": "0.5", "sessions_after": "0.54", "crawl": "Đã crawl lại", "last_crawl": "2026-10-21", "danh_gia": "Nhu cầu tìm kiếm giảm"}, {"slug": "dong-trung-ha-thao-ky-voi-gi-can-luu-y-gi-khi-su-dung", "url": "https://dangcapphaidep.vn/tin-tuc/dong-trung-ha-thao-ky-voi-gi-can-luu-y-gi-khi-su-dung", "dot": "Đợt 1 (24–29/09)", "published": "2026-09-25", "after_days": "28", "impr_before": "29.5", "impr_after": "15.3", "clicks_before": "0.32", "clicks_after": "0.14", "pos_before": "5.5", "pos_after": "5.1", "sessions_before": "0.32", "sessions_after": "0.36", "crawl": "Đã crawl lại", "last_crawl": "2026-10-18", "danh_gia": "Hiển thị giảm, hạng giữ"}, {"slug": "phuong-phap-hieu-qua-nhat-giup-tri-mun-2-ben-canh-mui", "url": "https://dangcapphaidep.vn/tin-tuc/phuong-phap-hieu-qua-nhat-giup-tri-mun-2-ben-canh-mui", "dot": "Đợt 1 (24–29/09)", "published": "2026-09-25", "after_days": "29", "impr_before": "43.3", "impr_after": "51.6", "clicks_before": "1.14", "clicks_after": "0.59", "pos_before": "5.9", "pos_after": "5.6", "sessions_before": "1.45", "sessions_after": "0.83", "crawl": "Đã crawl lại", "last_crawl": "2026-10-18", "danh_gia": "Số nhỏ, chưa kết luận"}, {"slug": "long-may-co-moc-khong", "url": "https://dangcapphaidep.vn/tin-tuc/long-may-co-moc-khong", "dot": "Đợt 1 (24–29/09)", "published": "2026-09-28", "after_days": "25", "impr_before": "200.7", "impr_after": "209.1", "clicks_before": "2.08", "clicks_after": "1.96", "pos_before": "4.3", "pos_after": "3.9", "sessions_before": "2.64", "sessions_after": "2.64", "crawl": "Đã crawl lại", "last_crawl": "2026-10-19", "danh_gia": "Đi ngang"}, {"slug": "trangala-tri-mun", "url": "https://dangcapphaidep.vn/tin-tuc/trangala-tri-mun", "dot": "Đợt 1 (24–29/09)", "published": "2026-09-28", "after_days": "25", "impr_before": "180.2", "impr_after": "133.0", "clicks_before": "1.28", "clicks_after": "1.28", "pos_before": "5.7", "pos_after": "5.0", "sessions_before": "2.32", "sessions_after": "3.68", "crawl": "Đã crawl lại", "last_crawl": "2026-10-21", "danh_gia": "Tụt 1 từ khoá"}, {"slug": "top-3-cach-lam-trang-da-voi-cac-loai-bot-thien-nhien", "url": "https://dangcapphaidep.vn/tin-tuc/top-3-cach-lam-trang-da-voi-cac-loai-bot-thien-nhien", "dot": "Đợt 1 (24–29/09)", "published": "2026-09-29", "after_days": "24", "impr_before": "88.7", "impr_after": "71.2", "clicks_before": "0.79", "clicks_after": "1.25", "pos_before": "5.8", "pos_after": "5.5", "sessions_before": "1.12", "sessions_after": "1.46", "crawl": "Đã crawl lại", "last_crawl": "2026-10-20", "danh_gia": "Tăng"}, {"slug": "cham-soc-long-may-sau-khi-xoa-laser", "url": "https://dangcapphaidep.vn/tin-tuc/cham-soc-long-may-sau-khi-xoa-laser", "dot": "Đợt 2 (06–10/10)", "published": "2026-10-06", "after_days": "17", "impr_before": "137.9", "impr_after": "177.6", "clicks_before": "2.12", "clicks_after": "2.12", "pos_before": "8.6", "pos_after": "7.7", "sessions_before": "3.53", "sessions_after": "3.24", "crawl": "Đã crawl lại", "last_crawl": "2026-10-21", "danh_gia": "Tăng"}, {"slug": "trung-ga-luoc-co-su-tri-mun-hieu-qua", "url": "https://dangcapphaidep.vn/tin-tuc/trung-ga-luoc-co-su-tri-mun-hieu-qua", "dot": "Đợt 2 (06–10/10)", "published": "2026-10-06", "after_days": "17", "impr_before": "97.7", "impr_after": "123.6", "clicks_before": "1.24", "clicks_after": "1.76", "pos_before": "7.7", "pos_after": "6.5", "sessions_before": "1.82", "sessions_after": "2.53", "crawl": "Đã crawl lại", "last_crawl": "2026-10-20", "danh_gia": "Tăng"}, {"slug": "bat-mi-22-cach-de-khuon-mat-dep-hon", "url": "https://dangcapphaidep.vn/tin-tuc/bat-mi-22-cach-de-khuon-mat-dep-hon", "dot": "Đợt 2 (06–10/10)", "published": "2026-10-07", "after_days": "16", "impr_before": "62.9", "impr_after": "46.6", "clicks_before": "0.62", "clicks_after": "0.38", "pos_before": "5.2", "pos_after": "5.6", "sessions_before": "1.44", "sessions_after": "0.62", "crawl": "Đã crawl lại", "last_crawl": "2026-10-19", "danh_gia": "Tụt hạng thật"}, {"slug": "cach-lam-long-mi-dai-va-day-nhanh", "url": "https://dangcapphaidep.vn/tin-tuc/cach-lam-long-mi-dai-va-day-nhanh", "dot": "Đợt 2 (06–10/10)", "published": "2026-10-07", "after_days": "16", "impr_before": "97.9", "impr_after": "66.8", "clicks_before": "0.69", "clicks_after": "0.31", "pos_before": "5.8", "pos_after": "5.6", "sessions_before": "1.44", "sessions_after": "0.69", "crawl": "Đã crawl lại", "last_crawl": "2026-10-19", "danh_gia": "Số nhỏ, chưa kết luận"}, {"slug": "cach-lam-moc-long-may-nhanh-bang-dau-dua", "url": "https://dangcapphaidep.vn/tin-tuc/cach-lam-moc-long-may-nhanh-bang-dau-dua", "dot": "Đợt 2 (06–10/10)", "published": "2026-10-07", "after_days": "16", "impr_before": "58.4", "impr_after": "52.0", "clicks_before": "0.88", "clicks_after": "0.5", "pos_before": "3.8", "pos_after": "4.1", "sessions_before": "0.88", "sessions_after": "0.69", "crawl": "Đã crawl lại", "last_crawl": "2026-10-19", "danh_gia": "Hiển thị giảm, hạng giữ"}, {"slug": "chay-nang-da-tay", "url": "https://dangcapphaidep.vn/tin-tuc/chay-nang-da-tay", "dot": "Đợt 2 (06–10/10)", "published": "2026-10-07", "after_days": "16", "impr_before": "18.2", "impr_after": "25.8", "clicks_before": "0.06", "clicks_after": "0.06", "pos_before": "5.9", "pos_after": "5.9", "sessions_before": "0.88", "sessions_after": "0.44", "crawl": "Đã crawl lại", "last_crawl": "2026-10-12", "danh_gia": "Tăng"}, {"slug": "danh-sach-cac-buoc-trang-diem-chong-nang-dung-chuan", "url": "https://dangcapphaidep.vn/tin-tuc/danh-sach-cac-buoc-trang-diem-chong-nang-dung-chuan", "dot": "Đợt 2 (06–10/10)", "published": "2026-10-07", "after_days": "16", "impr_before": "54.1", "impr_after": "63.9", "clicks_before": "0.56", "clicks_after": "1.25", "pos_before": "4.1", "pos_after": "5.3", "sessions_before": "0.88", "sessions_after": "1.88", "crawl": "Đã crawl lại", "last_crawl": "2026-10-21", "danh_gia": "Vị trí TB bị kéo lệch"}, {"slug": "dau-da-day-uong-dong-trung-ha-thao-duoc-khong", "url": "https://dangcapphaidep.vn/tin-tuc/dau-da-day-uong-dong-trung-ha-thao-duoc-khong", "dot": "Đợt 2 (06–10/10)", "published": "2026-10-07", "after_days": "16", "impr_before": "15.2", "impr_after": "19.9", "clicks_before": "0.12", "clicks_after": "0.06", "pos_before": "7.3", "pos_after": "5.5", "sessions_before": "0.12", "sessions_after": "0.19", "crawl": "Đã crawl lại", "last_crawl": "2026-10-22", "danh_gia": "Tăng"}, {"slug": "kem-chong-nang-tieng-anh-la-gi", "url": "https://dangcapphaidep.vn/tin-tuc/kem-chong-nang-tieng-anh-la-gi", "dot": "Đợt 2 (06–10/10)", "published": "2026-10-07", "after_days": "16", "impr_before": "76.6", "impr_after": "57.8", "clicks_before": "0.06", "clicks_after": "0.06", "pos_before": "7.1", "pos_after": "6.8", "sessions_before": "0.19", "sessions_after": "0.06", "crawl": "Đã crawl lại", "last_crawl": "2026-10-19", "danh_gia": "Hiển thị giảm, hạng giữ"}, {"slug": "long-may-sau-khi-bong-co-nho-lai-khong", "url": "https://dangcapphaidep.vn/tin-tuc/long-may-sau-khi-bong-co-nho-lai-khong", "dot": "Đợt 2 (06–10/10)", "published": "2026-10-07", "after_days": "16", "impr_before": "66.2", "impr_after": "96.2", "clicks_before": "1.31", "clicks_after": "0.94", "pos_before": "8.3", "pos_after": "10.6", "sessions_before": "1.88", "sessions_after": "1.44", "crawl": "Đã crawl lại", "last_crawl": "2026-10-18", "danh_gia": "Vị trí TB bị kéo lệch"}, {"slug": "uong-dong-trung-ha-thao-truoc-khi-di-ngu", "url": "https://dangcapphaidep.vn/tin-tuc/uong-dong-trung-ha-thao-truoc-khi-di-ngu", "dot": "Đợt 2 (06–10/10)", "published": "2026-10-07", "after_days": "16", "impr_before": "15.2", "impr_after": "18.3", "clicks_before": "0.25", "clicks_after": "0.06", "pos_before": "5.3", "pos_after": "5.8", "sessions_before": "0.31", "sessions_after": "0.25", "crawl": "Đã crawl lại", "last_crawl": "2026-10-21", "danh_gia": "Tăng"}, {"slug": "an-bim-bim-co-beo-khong", "url": "https://dangcapphaidep.vn/tin-tuc/an-bim-bim-co-beo-khong", "dot": "Đợt 2 (06–10/10)", "published": "2026-10-08", "after_days": "15", "impr_before": "8.1", "impr_after": "70.3", "clicks_before": "0.0", "clicks_after": "0.13", "pos_before": "9.9", "pos_after": "6.7", "sessions_before": "0.07", "sessions_after": "0.27", "crawl": "Đã crawl lại", "last_crawl": "2026-10-21", "danh_gia": "Tăng"}, {"slug": "bao-ve-toc-ngay-mua", "url": "https://dangcapphaidep.vn/tin-tuc/bao-ve-toc-ngay-mua", "dot": "Đợt 2 (06–10/10)", "published": "2026-10-08", "after_days": "15", "impr_before": "42.0", "impr_after": "33.1", "clicks_before": "0.4", "clicks_after": "0.53", "pos_before": "4.7", "pos_after": "3.8", "sessions_before": "0.47", "sessions_after": "0.47", "crawl": "Đã crawl lại", "last_crawl": "2026-10-21", "danh_gia": "Hiển thị giảm, hạng giữ"}, {"slug": "da-dau-kho-va-da-dau-bi-gau", "url": "https://dangcapphaidep.vn/tin-tuc/da-dau-kho-va-da-dau-bi-gau", "dot": "Đợt 2 (06–10/10)", "published": "2026-10-08", "after_days": "15", "impr_before": "139.5", "impr_after": "132.7", "clicks_before": "3.8", "clicks_after": "4.53", "pos_before": "5.9", "pos_after": "6.3", "sessions_before": "5.2", "sessions_after": "5.4", "crawl": "Đã crawl lại", "last_crawl": "2026-10-17", "danh_gia": "Đi ngang"}, {"slug": "kieu-long-may-cho-mat-tron", "url": "https://dangcapphaidep.vn/tin-tuc/kieu-long-may-cho-mat-tron", "dot": "Đợt 2 (06–10/10)", "published": "2026-10-08", "after_days": "15", "impr_before": "28.2", "impr_after": "35.3", "clicks_before": "0.67", "clicks_after": "0.53", "pos_before": "5.7", "pos_after": "8.9", "sessions_before": "0.73", "sessions_after": "0.67", "crawl": "Đã crawl lại", "last_crawl": "2026-10-14", "danh_gia": "Vị trí TB bị kéo lệch"}, {"slug": "lieu-phap-lam-trang-da-hieu-qua-tu-tra-xanh", "url": "https://dangcapphaidep.vn/tin-tuc/lieu-phap-lam-trang-da-hieu-qua-tu-tra-xanh", "dot": "Đợt 2 (06–10/10)", "published": "2026-10-08", "after_days": "15", "impr_before": "8.2", "impr_after": "8.0", "clicks_before": "0.0", "clicks_after": "0.07", "pos_before": "8.0", "pos_after": "8.2", "sessions_before": "0.07", "sessions_after": "0.13", "crawl": "Đã crawl lại", "last_crawl": "2026-10-21", "danh_gia": "Số nhỏ, chưa kết luận"}, {"slug": "ly-do-hang-dau-khien-da-bi-xin-mau", "url": "https://dangcapphaidep.vn/tin-tuc/ly-do-hang-dau-khien-da-bi-xin-mau", "dot": "Đợt 2 (06–10/10)", "published": "2026-10-08", "after_days": "15", "impr_before": "37.7", "impr_after": "54.3", "clicks_before": "0.0", "clicks_after": "0.0", "pos_before": "7.8", "pos_after": "8.0", "sessions_before": "0.27", "sessions_after": "0.27", "crawl": "Đã crawl lại", "last_crawl": "2026-10-20", "danh_gia": "Tăng"}, {"slug": "malachite-la-da-gi", "url": "https://dangcapphaidep.vn/tin-tuc/malachite-la-da-gi", "dot": "Đợt 2 (06–10/10)", "published": "2026-10-08", "after_days": "15", "impr_before": "14.5", "impr_after": "19.4", "clicks_before": "0.13", "clicks_after": "0.13", "pos_before": "5.6", "pos_after": "5.3", "sessions_before": "0.13", "sessions_after": "0.33", "crawl": "Đã crawl lại", "last_crawl": "2026-10-22", "danh_gia": "Tăng"}, {"slug": "meso-exosome-la-gi", "url": "https://dangcapphaidep.vn/tin-tuc/meso-exosome-la-gi", "dot": "Đợt 2 (06–10/10)", "published": "2026-10-08", "after_days": "15", "impr_before": "25.4", "impr_after": "33.5", "clicks_before": "0.0", "clicks_after": "0.07", "pos_before": "5.6", "pos_after": "4.5", "sessions_before": "0.07", "sessions_after": "0.27", "crawl": "Đã crawl lại", "last_crawl": "2026-10-20", "danh_gia": "Tăng"}, {"slug": "thuong-hieu-duoc-pham-toan-cau-obagi-medical-chia-khoa-van-nang-cho-lan-da-khong-tuoi", "url": "https://dangcapphaidep.vn/tin-tuc/thuong-hieu-duoc-pham-toan-cau-obagi-medical-chia-khoa-van-nang-cho-lan-da-khong-tuoi", "dot": "Đợt 2 (06–10/10)", "published": "2026-10-08", "after_days": "15", "impr_before": "26.0", "impr_after": "45.0", "clicks_before": "0.0", "clicks_after": "0.13", "pos_before": "4.8", "pos_after": "4.8", "sessions_before": "0.13", "sessions_after": "0.13", "crawl": "Đã crawl lại", "last_crawl": "2026-10-08", "danh_gia": "Tăng"}, {"slug": "yoosun-rau-ma-co-tri-mun-khong", "url": "https://dangcapphaidep.vn/tin-tuc/yoosun-rau-ma-co-tri-mun-khong", "dot": "Đợt 2 (06–10/10)", "published": "2026-10-08", "after_days": "15", "impr_before": "20.9", "impr_after": "8.6", "clicks_before": "0.07", "clicks_after": "0.2", "pos_before": "10.7", "pos_after": "7.8", "sessions_before": "0.13", "sessions_after": "0.33", "crawl": "Đã crawl lại", "last_crawl": "2026-10-19", "danh_gia": "Nhu cầu tìm kiếm giảm"}, {"slug": "bat-mi-cach-dung-la-khe-chua-tri-mun-hieu-qua", "url": "https://dangcapphaidep.vn/tin-tuc/bat-mi-cach-dung-la-khe-chua-tri-mun-hieu-qua", "dot": "Đợt 2 (06–10/10)", "published": "2026-10-09", "after_days": "14", "impr_before": "10.1", "impr_after": "8.6", "clicks_before": "0.14", "clicks_after": "0.21", "pos_before": "5.6", "pos_after": "5.8", "sessions_before": "0.21", "sessions_after": "0.36", "crawl": "Đã crawl lại", "last_crawl": "2026-10-17", "danh_gia": "Số nhỏ, chưa kết luận"}, {"slug": "bi-quyet-moc-long-may-nhanh-voi-thuoc-moc-long-may-revitalash", "url": "https://dangcapphaidep.vn/tin-tuc/bi-quyet-moc-long-may-nhanh-voi-thuoc-moc-long-may-revitalash", "dot": "Đợt 2 (06–10/10)", "published": "2026-10-09", "after_days": "14", "impr_before": "7.6", "impr_after": "7.3", "clicks_before": "0.07", "clicks_after": "0.29", "pos_before": "7.1", "pos_after": "8.2", "sessions_before": "0.07", "sessions_after": "0.36", "crawl": "Đã crawl lại", "last_crawl": "2026-10-20", "danh_gia": "Số nhỏ, chưa kết luận"}, {"slug": "co-nen-boi-kem-chong-nang-truc-tiep-len-mat-khong-da-mat-co-bi-anh-huong-gi-khong", "url": "https://dangcapphaidep.vn/tin-tuc/co-nen-boi-kem-chong-nang-truc-tiep-len-mat-khong-da-mat-co-bi-anh-huong-gi-khong", "dot": "Đợt 2 (06–10/10)", "published": "2026-10-09", "after_days": "14", "impr_before": "13.6", "impr_after": "8.8", "clicks_before": "0.0", "clicks_after": "0.07", "pos_before": "6.6", "pos_after": "7.8", "sessions_before": "0.0", "sessions_after": "0.14", "crawl": "Đã crawl lại", "last_crawl": "2026-10-22", "danh_gia": "Số nhỏ, chưa kết luận"}, {"slug": "kem-duong-da-tay", "url": "https://dangcapphaidep.vn/tin-tuc/kem-duong-da-tay", "dot": "Đợt 2 (06–10/10)", "published": "2026-10-09", "after_days": "14", "impr_before": "20.6", "impr_after": "17.9", "clicks_before": "0.43", "clicks_after": "0.86", "pos_before": "7.6", "pos_after": "9.1", "sessions_before": "0.36", "sessions_after": "1.0", "crawl": "Đã crawl lại", "last_crawl": "2026-10-22", "danh_gia": "Tụt 1 từ khoá"}, {"slug": "nen-uong-ha-thu-o-vao-luc-nao-de-dat-hieu-qua-tot-nhat", "url": "https://dangcapphaidep.vn/tin-tuc/nen-uong-ha-thu-o-vao-luc-nao-de-dat-hieu-qua-tot-nhat", "dot": "Đợt 2 (06–10/10)", "published": "2026-10-09", "after_days": "14", "impr_before": "30.4", "impr_after": "34.9", "clicks_before": "0.21", "clicks_after": "0.57", "pos_before": "6.8", "pos_after": "6.6", "sessions_before": "0.21", "sessions_after": "0.79", "crawl": "Đã crawl lại", "last_crawl": "2026-10-13", "danh_gia": "Tăng"}, {"slug": "nhung-cach-don-gian-tao-mui-huong-tu-nhien-cho-co-the", "url": "https://dangcapphaidep.vn/tin-tuc/nhung-cach-don-gian-tao-mui-huong-tu-nhien-cho-co-the", "dot": "Đợt 2 (06–10/10)", "published": "2026-10-09", "after_days": "14", "impr_before": "32.9", "impr_after": "29.4", "clicks_before": "1.5", "clicks_after": "0.64", "pos_before": "6", "pos_after": "5.1", "sessions_before": "1.64", "sessions_after": "1.0", "crawl": "Đã crawl lại", "last_crawl": "2026-10-15", "danh_gia": "Số nhỏ, chưa kết luận"}, {"slug": "tai-sao-nen-dung-sua-duong-vao-buoi-toi", "url": "https://dangcapphaidep.vn/tin-tuc/tai-sao-nen-dung-sua-duong-vao-buoi-toi", "dot": "Đợt 2 (06–10/10)", "published": "2026-10-09", "after_days": "14", "impr_before": "9.7", "impr_after": "27.0", "clicks_before": "0.07", "clicks_after": "0.5", "pos_before": "5.9", "pos_after": "5.9", "sessions_before": "0.21", "sessions_after": "0.86", "crawl": "Đã crawl lại", "last_crawl": "2026-10-14", "danh_gia": "Tăng"}, {"slug": "tiet-lo-cong-thuc-lam-trang-da-voi-bun-khoang-chuan-spa", "url": "https://dangcapphaidep.vn/tin-tuc/tiet-lo-cong-thuc-lam-trang-da-voi-bun-khoang-chuan-spa", "dot": "Đợt 2 (06–10/10)", "published": "2026-10-09", "after_days": "14", "impr_before": "5.9", "impr_after": "5.1", "clicks_before": "0.07", "clicks_after": "0.0", "pos_before": "8.5", "pos_after": "6.6", "sessions_before": "0.21", "sessions_after": "0.07", "crawl": "Chưa crawl lại", "last_crawl": "2026-10-01", "danh_gia": "Số nhỏ, chưa kết luận"}, {"slug": "dap-mat-na-dua-leo", "url": "https://dangcapphaidep.vn/tin-tuc/dap-mat-na-dua-leo", "dot": "Đợt 2 (06–10/10)", "published": "2026-10-10", "after_days": "13", "impr_before": "15.8", "impr_after": "8.8", "clicks_before": "0.0", "clicks_after": "0.0", "pos_before": "8.3", "pos_after": "8.6", "sessions_before": "0.0", "sessions_after": "0.31", "crawl": "Đã crawl lại", "last_crawl": "2026-10-21", "danh_gia": "Số nhỏ, chưa kết luận"}, {"slug": "duong-da-tay", "url": "https://dangcapphaidep.vn/tin-tuc/duong-da-tay", "dot": "Đợt 3 (13–20/10)", "published": "2026-10-13", "after_days": "10", "impr_before": "34.4", "impr_after": "28.2", "clicks_before": "0.5", "clicks_after": "0.3", "pos_before": "6.3", "pos_after": "6.7", "sessions_before": "0.9", "sessions_after": "0.5", "crawl": "Đã crawl lại", "last_crawl": "2026-10-21", "danh_gia": "Hiển thị giảm, hạng giữ"}, {"slug": "mot-loai-rau-cu-mang-lai-da-sang-dang-xinh", "url": "https://dangcapphaidep.vn/tin-tuc/mot-loai-rau-cu-mang-lai-da-sang-dang-xinh", "dot": "Đợt 3 (13–20/10)", "published": "2026-10-15", "after_days": "8", "impr_before": "34.5", "impr_after": "32.9", "clicks_before": "1.25", "clicks_after": "1.75", "pos_before": "5.7", "pos_after": "4.9", "sessions_before": "1.0", "sessions_after": "2.75", "crawl": "Đã crawl lại", "last_crawl": "2026-10-21", "danh_gia": "Tăng"}, {"slug": "tommy-hifiger-thuong-hieu-thoi-trang-nuoc-hoa-day-luc-tai", "url": "https://dangcapphaidep.vn/tin-tuc/tommy-hifiger-thuong-hieu-thoi-trang-nuoc-hoa-day-luc-tai", "dot": "Đợt 3 (13–20/10)", "published": "2026-10-15", "after_days": "8", "impr_before": "13.8", "impr_after": "24.9", "clicks_before": "0.0", "clicks_after": "0.12", "pos_before": "8.9", "pos_after": "6.5", "sessions_before": "0.0", "sessions_after": "0.38", "crawl": "Đã crawl lại", "last_crawl": "2026-10-21", "danh_gia": "Tăng"}, {"slug": "cach-tri-mun-bang-oxy-gia-neu-ban-chua-biet-thi-tiec", "url": "https://dangcapphaidep.vn/tin-tuc/cach-tri-mun-bang-oxy-gia-neu-ban-chua-biet-thi-tiec", "dot": "Đợt 3 (13–20/10)", "published": "2026-10-16", "after_days": "7", "impr_before": "8.4", "impr_after": "4.4", "clicks_before": "0.0", "clicks_after": "0.0", "pos_before": "9.3", "pos_after": "8", "sessions_before": "0.14", "sessions_after": "0.0", "crawl": "Đã crawl lại", "last_crawl": "2026-10-17", "danh_gia": "Số nhỏ, chưa kết luận"}, {"slug": "cay-meso-extra-khong-kim-gia-bao-nhieu", "url": "https://dangcapphaidep.vn/tin-tuc/cay-meso-extra-khong-kim-gia-bao-nhieu", "dot": "Đợt 3 (13–20/10)", "published": "2026-10-17", "after_days": "6", "impr_before": "8.3", "impr_after": "7.5", "clicks_before": "0.17", "clicks_after": "0.0", "pos_before": "7.7", "pos_after": "5.7", "sessions_before": "0.67", "sessions_after": "0.5", "crawl": "Đã crawl lại", "last_crawl": "2026-10-17", "danh_gia": "Còn sớm (<7 ngày)"}, {"slug": "co-nen-boi-kem-chong-nang-quanh-mat", "url": "https://dangcapphaidep.vn/tin-tuc/co-nen-boi-kem-chong-nang-quanh-mat", "dot": "Đợt 3 (13–20/10)", "published": "2026-10-17", "after_days": "6", "impr_before": "5.3", "impr_after": "4.5", "clicks_before": "0.0", "clicks_after": "0.17", "pos_before": "5.3", "pos_after": "4.7", "sessions_before": "0.0", "sessions_after": "0.5", "crawl": "Đã crawl lại", "last_crawl": "2026-10-17", "danh_gia": "Còn sớm (<7 ngày)"}, {"slug": "cong-dung-cua-dau-xanh-doi-voi-lan-da-va-nhung-luu-y-khi-su-dung", "url": "https://dangcapphaidep.vn/tin-tuc/cong-dung-cua-dau-xanh-doi-voi-lan-da-va-nhung-luu-y-khi-su-dung", "dot": "Đợt 3 (13–20/10)", "published": "2026-10-17", "after_days": "6", "impr_before": "8.7", "impr_after": "10.7", "clicks_before": "0.17", "clicks_after": "0.17", "pos_before": "4.7", "pos_after": "6.1", "sessions_before": "0.17", "sessions_after": "0.67", "crawl": "Đã crawl lại", "last_crawl": "2026-10-20", "danh_gia": "Còn sớm (<7 ngày)"}, {"slug": "marine-collagen-la-gi", "url": "https://dangcapphaidep.vn/tin-tuc/marine-collagen-la-gi", "dot": "Đợt 3 (13–20/10)", "published": "2026-10-17", "after_days": "6", "impr_before": "22.3", "impr_after": "14.5", "clicks_before": "0.83", "clicks_after": "0.33", "pos_before": "5.9", "pos_after": "11.9", "sessions_before": "1.0", "sessions_after": "0.5", "crawl": "Đã crawl lại", "last_crawl": "2026-10-17", "danh_gia": "Còn sớm (<7 ngày)"}, {"slug": "toc-gia-va-nhung-dieu-chi-em-nen-biet", "url": "https://dangcapphaidep.vn/tin-tuc/toc-gia-va-nhung-dieu-chi-em-nen-biet", "dot": "Đợt 3 (13–20/10)", "published": "2026-10-17", "after_days": "6", "impr_before": "15.2", "impr_after": "20.3", "clicks_before": "0.17", "clicks_after": "0.67", "pos_before": "7.5", "pos_after": "6.5", "sessions_before": "0.5", "sessions_after": "0.67", "crawl": "Đã crawl lại", "last_crawl": "2026-10-17", "danh_gia": "Còn sớm (<7 ngày)"}, {"slug": "cac-loai-meso-pho-bien", "url": "https://dangcapphaidep.vn/tin-tuc/cac-loai-meso-pho-bien", "dot": "Đợt 3 (13–20/10)", "published": "2026-10-19", "after_days": "4", "impr_before": "68.0", "impr_after": "58.0", "clicks_before": "4.25", "clicks_after": "4.0", "pos_before": "7.9", "pos_after": "8.9", "sessions_before": "5.25", "sessions_after": "5.25", "crawl": "Đã crawl lại", "last_crawl": "2026-10-22", "danh_gia": "Còn sớm (<7 ngày)"}, {"slug": "kem-duong-hay-sua-duong-tot-hon", "url": "https://dangcapphaidep.vn/tin-tuc/kem-duong-hay-sua-duong-tot-hon", "dot": "Đợt 3 (13–20/10)", "published": "2026-10-19", "after_days": "4", "impr_before": "9.8", "impr_after": "11.0", "clicks_before": "0.0", "clicks_after": "0.0", "pos_before": "4.8", "pos_after": "4.1", "sessions_before": "0.0", "sessions_after": "0.5", "crawl": "Đã crawl lại", "last_crawl": "2026-10-19", "danh_gia": "Còn sớm (<7 ngày)"}, {"slug": "7-cach-duong-am-tot-cho-da-su-dung-nguyen-lieu-tu-nhien", "url": "https://dangcapphaidep.vn/tin-tuc/7-cach-duong-am-tot-cho-da-su-dung-nguyen-lieu-tu-nhien", "dot": "Đợt 3 (13–20/10)", "published": "2026-10-20", "after_days": "3", "impr_before": "17.0", "impr_after": "5.3", "clicks_before": "0.67", "clicks_after": "0.0", "pos_before": "10.4", "pos_after": "6.7", "sessions_before": "1.0", "sessions_after": "0.0", "crawl": "Chưa crawl lại", "last_crawl": "2026-10-17", "danh_gia": "Còn sớm (<7 ngày)"}, {"slug": "cach-lam-trang-da-bang-rau-diep-ca", "url": "https://dangcapphaidep.vn/tin-tuc/cach-lam-trang-da-bang-rau-diep-ca", "dot": "Đợt 3 (13–20/10)", "published": "2026-10-20", "after_days": "3", "impr_before": "14.0", "impr_after": "11.3", "clicks_before": "0.67", "clicks_after": "0.0", "pos_before": "9.4", "pos_after": "5.9", "sessions_before": "1.0", "sessions_after": "1.0", "crawl": "Đã crawl lại", "last_crawl": "2026-10-20", "danh_gia": "Còn sớm (<7 ngày)"}, {"slug": "cong-dung-cua-dau-cam-gao", "url": "https://dangcapphaidep.vn/tin-tuc/cong-dung-cua-dau-cam-gao", "dot": "Đợt 3 (13–20/10)", "published": "2026-10-20", "after_days": "3", "impr_before": "12.7", "impr_after": "11.7", "clicks_before": "0.0", "clicks_after": "0.33", "pos_before": "6.5", "pos_after": "6.7", "sessions_before": "0.0", "sessions_after": "0.33", "crawl": "Chưa crawl lại", "last_crawl": "2026-10-12", "danh_gia": "Còn sớm (<7 ngày)"}, {"slug": "lam-kem-duong-am-tai-nha", "url": "https://dangcapphaidep.vn/tin-tuc/lam-kem-duong-am-tai-nha", "dot": "Đợt 3 (13–20/10)", "published": "2026-10-20", "after_days": "3", "impr_before": "14.0", "impr_after": "8.7", "clicks_before": "1.0", "clicks_after": "0.33", "pos_before": "5.5", "pos_after": "4.9", "sessions_before": "1.0", "sessions_after": "0.67", "crawl": "Đã crawl lại", "last_crawl": "2026-10-20", "danh_gia": "Còn sớm (<7 ngày)"}, {"slug": "lam-trang-da-bang-ruou", "url": "https://dangcapphaidep.vn/tin-tuc/lam-trang-da-bang-ruou", "dot": "Đợt 3 (13–20/10)", "published": "2026-10-20", "after_days": "3", "impr_before": "8.7", "impr_after": "3.7", "clicks_before": "0.33", "clicks_after": "0.67", "pos_before": "4.2", "pos_after": "3.6", "sessions_before": "0.67", "sessions_after": "0.67", "crawl": "Chưa crawl lại", "last_crawl": "2026-10-17", "danh_gia": "Còn sớm (<7 ngày)"}, {"slug": "lam-trang-da-nhanh-chong-chi-bang-uong-sinh-hang-ngay", "url": "https://dangcapphaidep.vn/tin-tuc/lam-trang-da-nhanh-chong-chi-bang-uong-sinh-hang-ngay", "dot": "Đợt 3 (13–20/10)", "published": "2026-10-20", "after_days": "3", "impr_before": "9.0", "impr_after": "4.0", "clicks_before": "0.33", "clicks_after": "0.33", "pos_before": "9.0", "pos_after": "2.6", "sessions_before": "0.33", "sessions_after": "0.33", "crawl": "Đã crawl lại", "last_crawl": "2026-10-22", "danh_gia": "Còn sớm (<7 ngày)"}, {"slug": "tu-lam-kem-chong-nang", "url": "https://dangcapphaidep.vn/tin-tuc/tu-lam-kem-chong-nang", "dot": "Đợt 3 (13–20/10)", "published": "2026-10-20", "after_days": "3", "impr_before": "15.0", "impr_after": "7.3", "clicks_before": "1.33", "clicks_after": "0.67", "pos_before": "4.4", "pos_after": "2.1", "sessions_before": "1.0", "sessions_after": "1.0", "crawl": "Đã crawl lại", "last_crawl": "2026-10-21", "danh_gia": "Còn sớm (<7 ngày)"}], "daily": [{"date": "2026-08-27", "impressions": "2896", "clicks": "40", "sessions": "60", "tintuc_impressions": "15187", "tintuc_clicks": "58", "gsc_complete": "yes"}, {"date": "2026-08-28", "impressions": "2907", "clicks": "41", "sessions": "57", "tintuc_impressions": "16222", "tintuc_clicks": "52", "gsc_complete": "yes"}, {"date": "2026-08-29", "impressions": "2946", "clicks": "42", "sessions": "62", "tintuc_impressions": "16299", "tintuc_clicks": "60", "gsc_complete": "yes"}, {"date": "2026-08-30", "impressions": "2852", "clicks": "40", "sessions": "58", "tintuc_impressions": "13850", "tintuc_clicks": "63", "gsc_complete": "yes"}, {"date": "2026-08-31", "impressions": "2426", "clicks": "34", "sessions": "52", "tintuc_impressions": "10600", "tintuc_clicks": "25", "gsc_complete": "yes"}, {"date": "2026-09-01", "impressions": "2316", "clicks": "26", "sessions": "44", "tintuc_impressions": "9408", "tintuc_clicks": "42", "gsc_complete": "yes"}, {"date": "2026-09-02", "impressions": "2430", "clicks": "39", "sessions": "52", "tintuc_impressions": "9584", "tintuc_clicks": "29", "gsc_complete": "yes"}, {"date": "2026-09-03", "impressions": "2332", "clicks": "40", "sessions": "56", "tintuc_impressions": "9511", "tintuc_clicks": "33", "gsc_complete": "yes"}, {"date": "2026-09-04", "impressions": "2559", "clicks": "38", "sessions": "46", "tintuc_impressions": "9489", "tintuc_clicks": "28", "gsc_complete": "yes"}, {"date": "2026-09-05", "impressions": "2369", "clicks": "37", "sessions": "53", "tintuc_impressions": "8970", "tintuc_clicks": "27", "gsc_complete": "yes"}, {"date": "2026-09-06", "impressions": "2321", "clicks": "38", "sessions": "47", "tintuc_impressions": "9758", "tintuc_clicks": "34", "gsc_complete": "yes"}, {"date": "2026-09-07", "impressions": "2208", "clicks": "39", "sessions": "61", "tintuc_impressions": "10046", "tintuc_clicks": "27", "gsc_complete": "yes"}, {"date": "2026-09-08", "impressions": "2601", "clicks": "42", "sessions": "46", "tintuc_impressions": "15150", "tintuc_clicks": "58", "gsc_complete": "yes"}, {"date": "2026-09-09", "impressions": "2521", "clicks": "43", "sessions": "60", "tintuc_impressions": "14622", "tintuc_clicks": "70", "gsc_complete": "yes"}, {"date": "2026-09-10", "impressions": "2529", "clicks": "36", "sessions": "53", "tintuc_impressions": "14556", "tintuc_clicks": "60", "gsc_complete": "yes"}, {"date": "2026-09-11", "impressions": "2607", "clicks": "56", "sessions": "58", "tintuc_impressions": "14745", "tintuc_clicks": "58", "gsc_complete": "yes"}, {"date": "2026-09-12", "impressions": "2654", "clicks": "48", "sessions": "63", "tintuc_impressions": "15157", "tintuc_clicks": "56", "gsc_complete": "yes"}, {"date": "2026-09-13", "impressions": "2682", "clicks": "42", "sessions": "51", "tintuc_impressions": "14845", "tintuc_clicks": "54", "gsc_complete": "yes"}, {"date": "2026-09-14", "impressions": "2674", "clicks": "48", "sessions": "79", "tintuc_impressions": "20602", "tintuc_clicks": "80", "gsc_complete": "yes"}, {"date": "2026-09-15", "impressions": "2331", "clicks": "31", "sessions": "48", "tintuc_impressions": "13049", "tintuc_clicks": "65", "gsc_complete": "yes"}, {"date": "2026-09-16", "impressions": "2286", "clicks": "30", "sessions": "33", "tintuc_impressions": "12612", "tintuc_clicks": "67", "gsc_complete": "yes"}, {"date": "2026-09-17", "impressions": "2074", "clicks": "33", "sessions": "41", "tintuc_impressions": "10805", "tintuc_clicks": "55", "gsc_complete": "yes"}, {"date": "2026-09-18", "impressions": "2372", "clicks": "27", "sessions": "48", "tintuc_impressions": "12703", "tintuc_clicks": "76", "gsc_complete": "yes"}, {"date": "2026-09-19", "impressions": "2393", "clicks": "30", "sessions": "45", "tintuc_impressions": "13159", "tintuc_clicks": "41", "gsc_complete": "yes"}, {"date": "2026-09-20", "impressions": "2246", "clicks": "44", "sessions": "36", "tintuc_impressions": "12290", "tintuc_clicks": "46", "gsc_complete": "yes"}, {"date": "2026-09-21", "impressions": "2190", "clicks": "33", "sessions": "55", "tintuc_impressions": "12366", "tintuc_clicks": "41", "gsc_complete": "yes"}, {"date": "2026-09-22", "impressions": "2115", "clicks": "35", "sessions": "49", "tintuc_impressions": "12132", "tintuc_clicks": "58", "gsc_complete": "yes"}, {"date": "2026-09-23", "impressions": "2003", "clicks": "38", "sessions": "43", "tintuc_impressions": "11786", "tintuc_clicks": "42", "gsc_complete": "yes"}, {"date": "2026-09-24", "impressions": "2067", "clicks": "35", "sessions": "51", "tintuc_impressions": "11009", "tintuc_clicks": "48", "gsc_complete": "yes"}, {"date": "2026-09-25", "impressions": "1949", "clicks": "34", "sessions": "55", "tintuc_impressions": "10612", "tintuc_clicks": "46", "gsc_complete": "yes"}, {"date": "2026-09-26", "impressions": "2079", "clicks": "39", "sessions": "54", "tintuc_impressions": "12299", "tintuc_clicks": "51", "gsc_complete": "yes"}, {"date": "2026-09-27", "impressions": "2193", "clicks": "47", "sessions": "54", "tintuc_impressions": "12974", "tintuc_clicks": "57", "gsc_complete": "yes"}, {"date": "2026-09-28", "impressions": "2236", "clicks": "35", "sessions": "54", "tintuc_impressions": "13473", "tintuc_clicks": "52", "gsc_complete": "yes"}, {"date": "2026-09-29", "impressions": "2224", "clicks": "35", "sessions": "54", "tintuc_impressions": "12834", "tintuc_clicks": "42", "gsc_complete": "yes"}, {"date": "2026-09-30", "impressions": "2151", "clicks": "35", "sessions": "49", "tintuc_impressions": "12297", "tintuc_clicks": "43", "gsc_complete": "yes"}, {"date": "2026-10-01", "impressions": "2180", "clicks": "51", "sessions": "61", "tintuc_impressions": "13304", "tintuc_clicks": "49", "gsc_complete": "yes"}, {"date": "2026-10-02", "impressions": "2110", "clicks": "34", "sessions": "62", "tintuc_impressions": "11956", "tintuc_clicks": "44", "gsc_complete": "yes"}, {"date": "2026-10-03", "impressions": "2222", "clicks": "40", "sessions": "45", "tintuc_impressions": "12308", "tintuc_clicks": "43", "gsc_complete": "yes"}, {"date": "2026-10-04", "impressions": "2359", "clicks": "32", "sessions": "66", "tintuc_impressions": "12951", "tintuc_clicks": "52", "gsc_complete": "yes"}, {"date": "2026-10-05", "impressions": "2184", "clicks": "41", "sessions": "63", "tintuc_impressions": "14013", "tintuc_clicks": "49", "gsc_complete": "yes"}, {"date": "2026-10-06", "impressions": "2149", "clicks": "39", "sessions": "55", "tintuc_impressions": "13416", "tintuc_clicks": "47", "gsc_complete": "yes"}, {"date": "2026-10-07", "impressions": "2042", "clicks": "35", "sessions": "49", "tintuc_impressions": "12989", "tintuc_clicks": "54", "gsc_complete": "yes"}, {"date": "2026-10-08", "impressions": "2318", "clicks": "34", "sessions": "56", "tintuc_impressions": "13439", "tintuc_clicks": "54", "gsc_complete": "yes"}, {"date": "2026-10-09", "impressions": "2237", "clicks": "44", "sessions": "65", "tintuc_impressions": "13185", "tintuc_clicks": "50", "gsc_complete": "yes"}, {"date": "2026-10-10", "impressions": "2202", "clicks": "39", "sessions": "56", "tintuc_impressions": "13501", "tintuc_clicks": "52", "gsc_complete": "yes"}, {"date": "2026-10-11", "impressions": "2444", "clicks": "39", "sessions": "41", "tintuc_impressions": "16377", "tintuc_clicks": "47", "gsc_complete": "yes"}, {"date": "2026-10-12", "impressions": "2421", "clicks": "37", "sessions": "54", "tintuc_impressions": "15165", "tintuc_clicks": "46", "gsc_complete": "yes"}, {"date": "2026-10-13", "impressions": "2335", "clicks": "42", "sessions": "42", "tintuc_impressions": "14310", "tintuc_clicks": "41", "gsc_complete": "yes"}, {"date": "2026-10-14", "impressions": "2540", "clicks": "37", "sessions": "62", "tintuc_impressions": "13987", "tintuc_clicks": "42", "gsc_complete": "yes"}, {"date": "2026-10-15", "impressions": "2450", "clicks": "32", "sessions": "45", "tintuc_impressions": "13822", "tintuc_clicks": "49", "gsc_complete": "yes"}, {"date": "2026-10-16", "impressions": "2464", "clicks": "43", "sessions": "46", "tintuc_impressions": "13291", "tintuc_clicks": "45", "gsc_complete": "yes"}, {"date": "2026-10-17", "impressions": "2289", "clicks": "37", "sessions": "49", "tintuc_impressions": "13130", "tintuc_clicks": "44", "gsc_complete": "yes"}, {"date": "2026-10-18", "impressions": "2417", "clicks": "38", "sessions": "52", "tintuc_impressions": "14144", "tintuc_clicks": "50", "gsc_complete": "yes"}, {"date": "2026-10-19", "impressions": "2314", "clicks": "31", "sessions": "50", "tintuc_impressions": "14424", "tintuc_clicks": "34", "gsc_complete": "yes"}, {"date": "2026-10-20", "impressions": "2233", "clicks": "36", "sessions": "59", "tintuc_impressions": "13022", "tintuc_clicks": "53", "gsc_complete": "yes"}], "queries": [{"key": "bat-mi-22-cach-de-khuon-mat-dep-hon | mặt đẹp", "slug": "bat-mi-22-cach-de-khuon-mat-dep-hon", "query": "mặt đẹp", "window": "13 ngày mỗi bên", "impr_before": "63", "pos_before": "1", "impr_after": "24", "pos_after": "7.3", "nhom": "Tụt hạng thật", "ghi_chu": "H3 bị gắn thêm từ khoá phụ, thêm phần nam giới, mô tả SEO chưa cập nhật"}, {"key": "bat-mi-22-cach-de-khuon-mat-dep-hon | khuôn mặt đẹp", "slug": "bat-mi-22-cach-de-khuon-mat-dep-hon", "query": "khuôn mặt đẹp", "window": "13 ngày mỗi bên", "impr_before": "72", "pos_before": "2.1", "impr_after": "11", "pos_after": "9.5", "nhom": "Tụt hạng thật", "ghi_chu": "Cùng nguyên nhân với \"mặt đẹp\""}, {"key": "trangala-tri-mun | trangala là thuốc gì", "slug": "trangala-tri-mun", "query": "trangala là thuốc gì", "window": "22 ngày mỗi bên", "impr_before": "117", "pos_before": "5.8", "impr_after": "131", "pos_after": "9.1", "nhom": "Tụt hạng thật", "ghi_chu": "Bản mới không còn mục trả lời thẳng câu \"Trangala là thuốc gì\""}, {"key": "kem-duong-da-tay | kem dưỡng da tay", "slug": "kem-duong-da-tay", "query": "kem dưỡng da tay", "window": "11 ngày mỗi bên", "impr_before": "8", "pos_before": "10", "impr_after": "10", "pos_after": "16.2", "nhom": "Tụt hạng thật", "ghi_chu": "Cụm từ khoá chính giảm từ 30 xuống 17 lần; mô tả còn ghi \"châu Âu\", lệch tiêu đề"}, {"key": "kem-duong-da-tay | kem dưỡng da tay của đức loại nào tốt nhất", "slug": "kem-duong-da-tay", "query": "kem dưỡng da tay của đức loại nào tốt nhất", "window": "11 ngày mỗi bên", "impr_before": "6", "pos_before": "5.8", "impr_after": "11", "pos_after": "2.1", "nhom": "Tăng", "ghi_chu": "Bù lại: bài lên top 2 cho nhóm \"của Đức\""}, {"key": "danh-sach-cac-buoc-trang-diem-chong-nang-dung-chuan | thứ tự các bước trang điểm", "slug": "danh-sach-cac-buoc-trang-diem-chong-nang-dung-chuan", "query": "thứ tự các bước trang điểm", "window": "13 ngày mỗi bên", "impr_before": "12", "pos_before": "1.8", "impr_after": "23", "pos_after": "9.1", "nhom": "Đánh đổi chấp nhận được", "ghi_chu": "Bài thu hẹp sang \"có kem chống nắng\"; nhóm đó vẫn top 2, clicks tăng"}, {"key": "danh-sach-cac-buoc-trang-diem-chong-nang-dung-chuan | các bước trang điểm có kem chống nắng", "slug": "danh-sach-cac-buoc-trang-diem-chong-nang-dung-chuan", "query": "các bước trang điểm có kem chống nắng", "window": "13 ngày mỗi bên", "impr_before": "88", "pos_before": "1.5", "impr_after": "77", "pos_after": "1.6", "nhom": "Giữ hạng", "ghi_chu": "Từ khoá chính của bài"}, {"key": "co-nen-dung-thuoc-bay-mau-tri-mun | thuốc 7 màu giá bao nhiêu", "slug": "co-nen-dung-thuoc-bay-mau-tri-mun", "query": "thuốc 7 màu giá bao nhiêu", "window": "25 ngày mỗi bên", "impr_before": "452", "pos_before": "9.7", "impr_after": "1", "pos_after": "14", "nhom": "Nhu cầu giảm", "ghi_chu": "Giảm từ tuần 07–20/09, trước ngày sửa 25/09"}, {"key": "yoosun-rau-ma-co-tri-mun-khong | yoosun rau má review", "slug": "yoosun-rau-ma-co-tri-mun-khong", "query": "yoosun rau má review", "window": "12 ngày mỗi bên", "impr_before": "115", "pos_before": "7.2", "impr_after": "16", "pos_after": "8.9", "nhom": "Nhu cầu giảm", "ghi_chu": "Hạng giữ 7–9, lượt hiển thị giảm dần từ cuối tháng 9"}, {"key": "trangala-tri-mun | trangala bôi gì", "slug": "trangala-tri-mun", "query": "trangala bôi gì", "window": "22 ngày mỗi bên", "impr_before": "195", "pos_before": "6.4", "impr_after": "67", "pos_after": "7.0", "nhom": "Nhu cầu giảm", "ghi_chu": "Hạng giữ quanh 7, chỉ lượt hiển thị giảm"}, {"key": "trangala-tri-mun | trangala qm", "slug": "trangala-tri-mun", "query": "trangala qm", "window": "22 ngày mỗi bên", "impr_before": "163", "pos_before": "9.8", "impr_after": "28", "pos_after": "10.0", "nhom": "Nhu cầu giảm", "ghi_chu": "Hạng giữ quanh 10, chỉ lượt hiển thị giảm"}, {"key": "kieu-long-may-cho-mat-tron | lông mày ngang cho mặt tròn", "slug": "kieu-long-may-cho-mat-tron", "query": "lông mày ngang cho mặt tròn", "window": "12 ngày mỗi bên", "impr_before": "1", "pos_before": "4", "impr_after": "18", "pos_after": "1.7", "nhom": "Tăng", "ghi_chu": "Vị trí TB xấu đi chỉ vì có thêm từ khoá đuôi dài mới"}], "cohorts": [{"dot": "Đợt 1 (24–29/09)", "so_bai": 8, "truoc": "05/09–23/09", "sau": "29/09–17/10", "so_ngay_sau": 19, "clicks_truoc": 7.6, "clicks_sau": 6.3, "clicks_lift": -0.184, "impr_lift": -0.113, "ctr_lift": -0.078, "ket_luan": "Kém hơn site"}, {"dot": "Đợt 2 (06–10/10)", "so_bai": 30, "truoc": "28/09–05/10", "sau": "10/10–17/10", "so_ngay_sau": 8, "clicks_truoc": 16.2, "clicks_sau": 18.0, "clicks_lift": 0.148, "impr_lift": 0.164, "ctr_lift": -0.007, "ket_luan": "Tốt hơn site, còn sớm"}, {"dot": "Đợt 3 (13–20/10)", "so_bai": 18, "truoc": "—", "sau": "—", "so_ngay_sau": 0, "clicks_truoc": null, "clicks_sau": null, "clicks_lift": null, "impr_lift": null, "ctr_lift": null, "ket_luan": "Chưa có dữ liệu sau sửa"}], "site_weekly": [{"week_end": "2026-08-01", "tintuc_clicks": 931, "total_clicks": 1937, "total_impressions": 186135, "ctr": 0.0104, "position": 9.1, "organic_sessions": 2305}, {"week_end": "2026-08-08", "tintuc_clicks": 918, "total_clicks": 1914, "total_impressions": 190583, "ctr": 0.01, "position": 8.2, "organic_sessions": 2213}, {"week_end": "2026-08-15", "tintuc_clicks": 843, "total_clicks": 1726, "total_impressions": 168223, "ctr": 0.0103, "position": 9.4, "organic_sessions": 2236}, {"week_end": "2026-08-22", "tintuc_clicks": 769, "total_clicks": 1561, "total_impressions": 135123, "ctr": 0.0116, "position": 9.8, "organic_sessions": 2040}, {"week_end": "2026-08-29", "tintuc_clicks": 733, "total_clicks": 1530, "total_impressions": 127503, "ctr": 0.012, "position": 10.1, "organic_sessions": 1976}, {"week_end": "2026-09-05", "tintuc_clicks": 499, "total_clicks": 1266, "total_impressions": 160430, "ctr": 0.0079, "position": 10.1, "organic_sessions": 1660}, {"week_end": "2026-09-12", "tintuc_clicks": 665, "total_clicks": 1512, "total_impressions": 144323, "ctr": 0.0105, "position": 8.6, "organic_sessions": 2031}, {"week_end": "2026-09-19", "tintuc_clicks": 679, "total_clicks": 1437, "total_impressions": 121643, "ctr": 0.0118, "position": 10.0, "organic_sessions": 1950}, {"week_end": "2026-09-26", "tintuc_clicks": 586, "total_clicks": 1346, "total_impressions": 106642, "ctr": 0.0126, "position": 8.3, "organic_sessions": 1809}, {"week_end": "2026-10-03", "tintuc_clicks": 606, "total_clicks": 1300, "total_impressions": 97421, "ctr": 0.013300000000000001, "position": 9.2, "organic_sessions": 1837}, {"week_end": "2026-10-10", "tintuc_clicks": 621, "total_clicks": 1195, "total_impressions": 79886, "ctr": 0.015, "position": 9.0, "organic_sessions": 1672}, {"week_end": "2026-10-17", "tintuc_clicks": 577, "total_clicks": 1064, "total_impressions": 77034, "ctr": 0.0138, "position": 11.1, "organic_sessions": 1453}]};
+  const calcs = {};
+  const subs = [];
+  const css = getComputedStyle(document.documentElement);
+  const colors = [css.getPropertyValue('--s1').trim(), css.getPropertyValue('--s2').trim()];
+  window.dash = {
+    colors,
+    data(id) {
+      if (id in DATA) return { status: 'ok', data: DATA[id] };
+      if (id in calcs) { const c = calcs[id]; return { status: 'ok', data: c.fn(...c.inputs.map((i) => window.dash.data(i).data)) }; }
+      return { status: 'missing', data: [] };
+    },
+    calc(id, spec) { calcs[id] = spec; },
+    onData(fn) { subs.push(fn); fn(); },
+  };
+  let t;
+  window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(() => subs.forEach((f) => f()), 150); });
+})();
+</script>
+<div class="au">
+  <header class="au-head">
+    <h1 class="au-title" id="tong-quan">Audit 56 bài tin-tuc 24/09–20/10/2026</h1>
+    <p class="au-lede" id="au-lede" data-source="cohorts">—</p>
+  </header>
+
+  <section class="au-section" id="theo-dot">
+    <h2 class="au-h2">Kết quả theo đợt sửa</h2>
+    <p class="au-note">Clicks/ngày của nhóm bài, sau khi trừ biến động chung của các bài /tin-tuc/ khác cùng kỳ. Dữ liệu Search Console tới 17/10/2026 (bỏ 3 ngày cuối chưa đủ số).</p>
+    <div class="au-grid" id="au-cohorts"></div>
+  </section>
+
+  <section class="au-section" id="theo-ngay">
+    <div class="au-card">
+      <h3 class="au-card-title">Theo ngày, cộng dồn 56 bài</h3>
+      <p class="au-note">Cột: lượt hiển thị Google. Đường: clicks. Vùng tô: giai đoạn đẩy bài 24/09–20/10. Tới 20/10/2026.</p>
+      <div class="au-legend" id="au-daily-legend"></div>
+      <div class="au-chart" id="au-daily" data-source="daily"></div>
+    </div>
+  </section>
+
+  <section class="au-section" id="phan-loai">
+    <div class="au-grid">
+      <div class="au-card">
+        <h3 class="au-card-title">Phân loại 56 bài</h3>
+        <p class="au-note">Theo phân tích từng từ khoá. Phần lớn bài "giảm" trên tool là do nhu cầu tìm kiếm hoặc số quá nhỏ, không phải tụt hạng.</p>
+        <div class="au-bars" id="au-cats" data-source="categories"></div>
+      </div>
+      <div class="au-card">
+        <h3 class="au-card-title">Xu hướng toàn site, 12 tuần</h3>
+        <p class="au-note">Tổng clicks Google mỗi tuần. Site đang giảm, nên bài giữ nguyên số đã là tốt hơn mặt bằng.</p>
+        <div class="au-chart-sm" id="au-site" data-source="site_weekly"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="au-section" id="tu-khoa">
+    <div class="au-card">
+      <h3 class="au-card-title">Từ khoá đằng sau các bài tụt</h3>
+      <p class="au-note">Lượt hiển thị và vị trí của từng từ khoá, trước và sau ngày sửa (cùng số ngày mỗi bên). Vị trí càng nhỏ càng tốt.</p>
+      <div class="au-tablebox">
+        <table class="au-table" id="au-queries" data-source="queries" data-row-key="key">
+          <thead><tr>
+            <th data-field="slug">Bài</th>
+            <th data-field="query">Từ khoá</th>
+            <th class="num" data-field="impr_before">Hiển thị trước</th>
+            <th class="num" data-field="pos_before">Vị trí trước</th>
+            <th class="num" data-field="impr_after">Hiển thị sau</th>
+            <th class="num" data-field="pos_after">Vị trí sau</th>
+            <th data-field="nhom">Nhóm</th>
+            <th class="au-hide-sm" data-field="ghi_chu">Ghi chú</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="au-section" id="tung-bai">
+    <div class="au-card">
+      <h3 class="au-card-title">Từng bài</h3>
+      <p class="au-note">Trung bình mỗi ngày. "Trước" là 25–28 ngày trước ngày sửa, "sau" là từ ngày sửa tới 22/10. Bài sửa sau 16/10 có dưới 7 ngày dữ liệu.</p>
+      <div class="au-tools">
+        <input id="au-search" type="search" placeholder="Tìm theo slug" aria-label="Tìm bài">
+        <select id="au-filter" aria-label="Lọc theo đánh giá"><option value="">Tất cả đánh giá</option></select>
+      </div>
+      <div class="au-tablebox">
+        <table class="au-table" id="au-items" data-source="items" data-row-key="slug">
+          <thead><tr>
+            <th data-field="slug"><button data-k="slug">Bài</button></th>
+            <th class="au-hide-sm" data-field="published"><button data-k="published">Ngày sửa</button></th>
+            <th class="num" data-field="impr_before"><button data-k="impr_before">Hiển thị trước</button></th>
+            <th class="num" data-field="impr_after"><button data-k="impr_after">Hiển thị sau</button></th>
+            <th class="num" data-field="clicks_before"><button data-k="clicks_before">Clicks trước</button></th>
+            <th class="num" data-field="clicks_after"><button data-k="clicks_after">Clicks sau</button></th>
+            <th class="num au-hide-sm" data-field="pos_before"><button data-k="pos_before">Vị trí trước</button></th>
+            <th class="num au-hide-sm" data-field="pos_after"><button data-k="pos_after">Vị trí sau</button></th>
+            <th class="au-hide-sm" data-field="crawl"><button data-k="crawl">Google</button></th>
+            <th data-field="danh_gia"><button data-k="danh_gia">Đánh giá</button></th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="au-method" id="cach-tinh">
+    <h2 class="au-h2">Cách tính</h2>
+    <p>Nguồn: Google Search Console và GA4 của dangcapphaidep.vn, lấy qua DCPD Tool ngày 23/10/2026. Ngày sửa của mỗi bài là ngày cập nhật cuối trên CMS.</p>
+    <p>Kết quả theo đợt: so trung bình mỗi ngày của nhóm bài trước và sau đợt sửa, rồi trừ phần tăng/giảm cùng kỳ của các bài /tin-tuc/ khác. Một đợt đẩy rải nhiều ngày thì cửa sổ "trước" kết thúc trước ngày bài đầu tiên lên.</p>
+    <p>Vị trí trung bình của một bài có thể xấu đi khi bài có thêm nhiều từ khoá mới ở hạng thấp, dù từ khoá chính không đổi. Vì vậy phần phân loại dựa trên từng từ khoá, không dựa trên vị trí trung bình.</p>
+    <p>Đọc lại: đợt 2 sau 31/10, đợt 3 sau 10/11.</p>
+  </section>
+</div>
+
+<script>
+(function () {
+  const num = (v) => (v === '' || v == null ? null : Number(v));
+  const pct = (v) => (v == null ? '—' : (v > 0 ? '+' : v < 0 ? '−' : '') + d3.format('.1%')(Math.abs(v)));
+  const f1 = d3.format(',.1f');
+  const f2 = d3.format(',.2f');
+
+  const encW = (v) => String(v).replace(/%/g, '%25').replace(/&/g, '%26').replace(/=/g, '%3D');
+
+  dash.calc('categories', {
+    title: 'Số bài theo đánh giá',
+    description: 'Đếm số bài trong mỗi nhóm đánh giá của bảng từng bài.',
+    inputs: ['items'],
+    fn: (items) => {
+      const m = new Map();
+      items.forEach((r) => m.set(r.danh_gia, (m.get(r.danh_gia) || 0) + 1));
+      return Array.from(m, ([danh_gia, so_bai]) => ({ danh_gia, so_bai })).sort((a, b) => b.so_bai - a.so_bai);
+    },
+  });
+
+  const failLine = (el) => { el.textContent = ''; const d = document.createElement('div'); d.className = 'au-fail'; d.textContent = 'Failed to load'; el.appendChild(d); };
+
+  function tone(v) { return v == null ? '' : v > 0 ? 'au-good' : v < 0 ? 'au-bad' : ''; }
+
+  // Header + cohort cards
+  dash.onData(() => {
+    const c = dash.data('cohorts');
+    const lede = document.getElementById('au-lede');
+    const box = document.getElementById('au-cohorts');
+    box.textContent = '';
+    if (c.status !== 'ok') {
+      lede.textContent = '—';
+      if (c.status === 'error') failLine(box);
+      return;
+    }
+    const rows = c.data;
+    const d1 = rows[0], d2 = rows[1];
+    lede.textContent = `Đợt 1 (8 bài) đang kém hơn mặt bằng site ${pct(num(d1.clicks_lift))} clicks. Đợt 2 (30 bài) tốt hơn ${pct(num(d2.clicks_lift))} nhưng mới có ${d2.so_ngay_sau} ngày dữ liệu. Đợt 3 chưa có số sau sửa. Chỉ 3 bài tụt hạng thật ở từ khoá chính.`;
+    rows.forEach((r) => {
+      const card = document.createElement('div');
+      card.className = 'au-card';
+      const where = 'dot=' + encW(r.dot);
+      const h = document.createElement('h3'); h.className = 'au-card-title'; h.textContent = r.dot; card.appendChild(h);
+      const note = document.createElement('p'); note.className = 'au-note';
+      note.textContent = r.so_ngay_sau ? `${r.so_bai} bài · trước ${r.truoc} · sau ${r.sau} (${r.so_ngay_sau} ngày)` : `${r.so_bai} bài · sửa 13–20/10, chưa đủ ngày để so`;
+      card.appendChild(note);
+      const big = document.createElement('div');
+      const lift = num(r.clicks_lift);
+      big.className = 'au-big ' + tone(lift);
+      big.textContent = pct(lift);
+      big.setAttribute('data-source', 'cohorts'); big.setAttribute('data-field', 'clicks_lift'); big.setAttribute('data-where', where);
+      card.appendChild(big);
+      const cap = document.createElement('p'); cap.className = 'au-note'; cap.textContent = 'clicks/ngày so với mặt bằng site'; card.appendChild(cap);
+      const dl = document.createElement('dl'); dl.className = 'au-kv';
+      const add = (label, field, text, cls) => {
+        const dt = document.createElement('dt'); dt.textContent = label;
+        const dd = document.createElement('dd'); dd.textContent = text; if (cls) dd.className = cls;
+        if (field) { dd.setAttribute('data-source', 'cohorts'); dd.setAttribute('data-field', field); dd.setAttribute('data-where', where); }
+        dl.append(dt, dd);
+      };
+      if (r.so_ngay_sau) {
+        add('Clicks/ngày', null, `${f1(num(r.clicks_truoc))} → ${f1(num(r.clicks_sau))}`);
+        add('Lượt hiển thị', 'impr_lift', pct(num(r.impr_lift)), tone(num(r.impr_lift)));
+        add('CTR', 'ctr_lift', pct(num(r.ctr_lift)), tone(num(r.ctr_lift)));
+      }
+      add('Kết luận', 'ket_luan', r.ket_luan);
+      card.appendChild(dl);
+      box.appendChild(card);
+    });
+  });
+
+  // Daily chart
+  const tip = document.createElement('div'); tip.className = 'au-tip'; tip.hidden = true;
+  dash.onData(() => {
+    const el = document.getElementById('au-daily');
+    const leg = document.getElementById('au-daily-legend');
+    el.textContent = ''; leg.textContent = '';
+    const d = dash.data('daily');
+    if (d.status !== 'ok') { if (d.status === 'error') failLine(el); return; }
+    const rows = d.data.map((r) => ({ date: new Date(r.date + 'T00:00:00Z'), impr: num(r.impressions), clicks: num(r.clicks) }));
+    const W = Math.max(320, el.clientWidth), H = 260;
+    const fmtD = d3.utcFormat('%d/%m');
+    const yI = d3.scaleLinear([0, d3.max(rows, (r) => r.impr) * 1.1], [H - 24, 8]).nice();
+    const yC = d3.scaleLinear([0, d3.max(rows, (r) => r.clicks) * 1.2], [H - 24, 8]).nice();
+    const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`);
+    const meas = svg.append('text').attr('font-size', 11).text(d3.format(',')(yI.domain()[1]));
+    const ml = meas.node().getComputedTextLength() + 10; meas.remove();
+    const meas2 = svg.append('text').attr('font-size', 11).text(String(yC.domain()[1]));
+    const mr = meas2.node().getComputedTextLength() + 10; meas2.remove();
+    const x = d3.scaleBand(rows.map((r) => +r.date), [ml, W - mr]).padding(0.25);
+    const g = svg.append('g');
+    g.append('g').selectAll('line').data(yI.ticks(4)).join('line')
+      .attr('x1', ml).attr('x2', W - mr).attr('y1', (v) => yI(v)).attr('y2', (v) => yI(v)).attr('stroke', 'var(--cds-chart-grid)');
+    const s0 = x(+new Date('2026-09-24T00:00:00Z')), s1 = x(+new Date('2026-10-20T00:00:00Z'));
+    if (s0 != null && s1 != null) g.append('rect').attr('x', s0).attr('y', 8).attr('width', s1 - s0 + x.bandwidth()).attr('height', H - 32).attr('fill', 'var(--cds-chart-reference)').attr('opacity', 0.12);
+    g.append('g').selectAll('rect').data(rows).join('rect')
+      .attr('x', (r) => x(+r.date)).attr('width', x.bandwidth()).attr('y', (r) => yI(r.impr)).attr('height', (r) => yI(0) - yI(r.impr))
+      .attr('rx', 2).attr('fill', dash.colors[0]).attr('opacity', 0.55);
+    const line = d3.line().x((r) => x(+r.date) + x.bandwidth() / 2).y((r) => yC(r.clicks));
+    g.append('path').datum(rows).attr('d', line).attr('fill', 'none').attr('stroke', dash.colors[1]).attr('stroke-width', 2).attr('stroke-linecap', 'round').attr('stroke-linejoin', 'round');
+    const ax = g.append('g').attr('transform', `translate(0,${H - 24})`)
+      .call(d3.axisBottom(x).tickValues(x.domain().filter((_, i) => i % Math.ceil(rows.length / Math.max(3, Math.floor(W / 70))) === 0)).tickFormat((v) => fmtD(new Date(v))).tickSize(0).tickPadding(8));
+    ax.attr('font-size', null).attr('font-family', null).select('.domain').attr('stroke', 'var(--cds-chart-axis)');
+    ax.selectAll('text').attr('fill', 'var(--color-fg-muted)').style('font-size', 'var(--cds-font-size-caption)');
+    const al = g.append('g').attr('transform', `translate(${ml},0)`).call(d3.axisLeft(yI).ticks(4).tickFormat(d3.format(',')).tickSize(0).tickPadding(6));
+    al.attr('font-size', null).attr('font-family', null).select('.domain').remove();
+    al.selectAll('text').attr('fill', 'var(--color-fg-muted)').style('font-size', 'var(--cds-font-size-caption)');
+    const ar = g.append('g').attr('transform', `translate(${W - mr},0)`).call(d3.axisRight(yC).ticks(4).tickSize(0).tickPadding(6));
+    ar.attr('font-size', null).attr('font-family', null).select('.domain').remove();
+    ar.selectAll('text').attr('fill', 'var(--color-fg-muted)').style('font-size', 'var(--cds-font-size-caption)');
+    const dot = g.append('circle').attr('r', 4).attr('fill', dash.colors[1]).attr('opacity', 0);
+    el.appendChild(tip);
+    svg.on('pointermove', (ev) => {
+      const [px] = d3.pointer(ev);
+      const i = Math.max(0, Math.min(rows.length - 1, Math.round((px - ml - x.bandwidth() / 2) / x.step())));
+      const r = rows[i];
+      dot.attr('cx', x(+r.date) + x.bandwidth() / 2).attr('cy', yC(r.clicks)).attr('opacity', 1);
+      tip.hidden = false;
+      tip.textContent = '';
+      const a = document.createElement('div'); a.className = 'au-tip-date'; a.textContent = d3.utcFormat('%d/%m/%Y')(r.date);
+      const b = document.createElement('div'); b.textContent = `Hiển thị ${d3.format(',')(r.impr)}`;
+      const c = document.createElement('div'); c.textContent = `Clicks ${d3.format(',')(r.clicks)}`;
+      tip.append(a, b, c);
+      const scale = el.clientWidth / W;
+      const left = (x(+r.date) + x.bandwidth() / 2) * scale;
+      tip.style.top = '8px';
+      tip.style.left = Math.min(Math.max(0, left + 12), el.clientWidth - tip.offsetWidth) + 'px';
+    }).on('pointerleave', () => { tip.hidden = true; dot.attr('opacity', 0); });
+    [['Lượt hiển thị', dash.colors[0]], ['Clicks', dash.colors[1]]].forEach(([t, col]) => {
+      const s = document.createElement('span'); const sw = document.createElement('span'); sw.className = 'au-sw'; sw.style.background = col;
+      s.append(sw, document.createTextNode(t)); leg.appendChild(s);
+    });
+  });
+
+  // Category bars
+  dash.onData(() => {
+    const el = document.getElementById('au-cats');
+    el.textContent = '';
+    const c = dash.data('categories');
+    if (c.status !== 'ok') { if (c.status === 'error') failLine(el); return; }
+    const color = {
+      'Tụt hạng thật': 'var(--cds-chart-status-critical)', 'Tụt 1 từ khoá': 'var(--cds-chart-status-critical)',
+      'Tăng': dash.colors[0],
+    };
+    const max = d3.max(c.data, (r) => r.so_bai);
+    c.data.forEach((r) => {
+      const row = document.createElement('div'); row.className = 'au-bar-row';
+      const where = 'danh_gia=' + encW(r.danh_gia);
+      const lab = document.createElement('span'); lab.textContent = r.danh_gia;
+      const tr = document.createElement('div'); tr.className = 'au-bar-track';
+      const fill = document.createElement('div'); fill.className = 'au-bar-fill';
+      fill.style.width = (r.so_bai / max * 100) + '%';
+      fill.style.background = color[r.danh_gia] || 'var(--cds-chart-muted)';
+      tr.appendChild(fill);
+      const n = document.createElement('span'); n.textContent = r.so_bai; n.style.textAlign = 'right';
+      n.setAttribute('data-source', 'categories'); n.setAttribute('data-field', 'so_bai'); n.setAttribute('data-where', where);
+      row.append(lab, tr, n); el.appendChild(row);
+    });
+  });
+
+  // Site weekly
+  dash.onData(() => {
+    const el = document.getElementById('au-site');
+    el.textContent = '';
+    const d = dash.data('site_weekly');
+    if (d.status !== 'ok') { if (d.status === 'error') failLine(el); return; }
+    const rows = d.data.map((r) => ({ w: new Date(r.week_end + 'T00:00:00Z'), v: num(r.total_clicks) }));
+    const W = Math.max(280, el.clientWidth), H = 200;
+    const y = d3.scaleLinear([0, d3.max(rows, (r) => r.v) * 1.15], [H - 22, 18]).nice();
+    const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`);
+    const x = d3.scaleBand(rows.map((r) => +r.w), [4, W - 4]).padding(0.3);
+    svg.append('g').selectAll('rect').data(rows).join('rect')
+      .attr('x', (r) => x(+r.w)).attr('width', x.bandwidth()).attr('y', (r) => y(r.v)).attr('height', (r) => y(0) - y(r.v))
+      .attr('rx', 4).attr('fill', (r, i) => (i === rows.length - 1 ? dash.colors[0] : 'var(--cds-chart-muted)'));
+    const ends = [rows[0], rows[rows.length - 1]];
+    svg.append('g').selectAll('text').data(ends).join('text')
+      .attr('x', (r) => x(+r.w) + x.bandwidth() / 2).attr('y', (r) => y(r.v) - 5).attr('text-anchor', 'middle')
+      .attr('fill', 'var(--color-fg)').style('font-size', 'var(--cds-font-size-caption)').text((r) => d3.format(',')(r.v));
+    const ax = svg.append('g').attr('transform', `translate(0,${H - 22})`)
+      .call(d3.axisBottom(x).tickValues([+rows[0].w, +rows[rows.length - 1].w]).tickFormat((v) => 'tuần tới ' + d3.utcFormat('%d/%m')(new Date(v))).tickSize(0).tickPadding(6));
+    ax.attr('font-size', null).attr('font-family', null).select('.domain').attr('stroke', 'var(--cds-chart-axis)');
+    ax.selectAll('text').attr('fill', 'var(--color-fg-muted)').style('font-size', 'var(--cds-font-size-caption)')
+      .attr('text-anchor', (_, i) => (i === 0 ? 'start' : 'end')).attr('dx', (_, i) => (i === 0 ? -x.bandwidth() / 2 : x.bandwidth() / 2));
+  });
+
+  // Query table
+  dash.onData(() => {
+    const tb = document.querySelector('#au-queries tbody');
+    tb.textContent = '';
+    const d = dash.data('queries');
+    if (d.status !== 'ok') return;
+    d.data.forEach((r) => {
+      const tr = document.createElement('tr');
+      tr.setAttribute('data-key', r.key);
+      const pb = num(r.pos_before), pa = num(r.pos_after);
+      const cells = [
+        [r.slug, 'au-slug'], [r.query, ''],
+        [d3.format(',')(num(r.impr_before)), 'num'], [pb == null ? '—' : f1(pb), 'num'],
+        [d3.format(',')(num(r.impr_after)), 'num'], [pa == null ? '—' : f1(pa), 'num' + (pb != null && pa != null && pa - pb >= 1 ? ' au-bad' : pb != null && pa != null && pb - pa >= 1 ? ' au-good' : '')],
+        [r.nhom, ''], [r.ghi_chu, 'au-hide-sm'],
+      ];
+      cells.forEach(([t, cls]) => { const td = document.createElement('td'); td.textContent = t; if (cls) td.className = cls; tr.appendChild(td); });
+      tb.appendChild(tr);
+    });
+  });
+
+  // Items table with search, filter, sort
+  const state = { q: '', f: '', k: 'published', dir: 1 };
+  const numeric = new Set(['impr_before', 'impr_after', 'clicks_before', 'clicks_after', 'pos_before', 'pos_after']);
+  function drawItems() {
+    const tb = document.querySelector('#au-items tbody');
+    tb.textContent = '';
+    const d = dash.data('items');
+    if (d.status !== 'ok') return;
+    const sel = document.getElementById('au-filter');
+    if (sel.options.length === 1) {
+      Array.from(new Set(d.data.map((r) => r.danh_gia))).sort().forEach((v) => { const o = document.createElement('option'); o.value = v; o.textContent = v; sel.appendChild(o); });
+    }
+    let rows = d.data.filter((r) => (!state.q || r.slug.includes(state.q)) && (!state.f || r.danh_gia === state.f));
+    rows = rows.slice().sort((a, b) => {
+      const va = numeric.has(state.k) ? (num(a[state.k]) ?? -Infinity) : a[state.k];
+      const vb = numeric.has(state.k) ? (num(b[state.k]) ?? -Infinity) : b[state.k];
+      return (va < vb ? -1 : va > vb ? 1 : 0) * state.dir;
+    });
+    document.querySelectorAll('#au-items th').forEach((th) => {
+      const k = th.querySelector('button').dataset.k;
+      th.setAttribute('aria-sort', k === state.k ? (state.dir > 0 ? 'ascending' : 'descending') : 'none');
+    });
+    const bad = new Set(['Tụt hạng thật', 'Tụt 1 từ khoá']);
+    rows.forEach((r) => {
+      const tr = document.createElement('tr');
+      const ib = num(r.impr_before), ia = num(r.impr_after), cb = num(r.clicks_before), ca = num(r.clicks_after);
+      const cells = [
+        [r.slug, 'au-slug'], [d3.utcFormat('%d/%m')(new Date(r.published + 'T00:00:00Z')), 'au-hide-sm'],
+        [f1(ib), 'num'], [f1(ia), 'num'], [f2(cb), 'num'], [f2(ca), 'num'],
+        [r.pos_before === '' ? '—' : f1(num(r.pos_before)), 'num au-hide-sm'], [r.pos_after === '' ? '—' : f1(num(r.pos_after)), 'num au-hide-sm'],
+        [r.crawl, 'au-hide-sm' + (r.crawl === 'Chưa crawl lại' ? ' au-warn' : '')],
+        [r.danh_gia, bad.has(r.danh_gia) ? 'au-bad' : r.danh_gia === 'Tăng' ? 'au-good' : ''],
+      ];
+      cells.forEach(([t, cls]) => { const td = document.createElement('td'); td.textContent = t; if (cls) td.className = cls; tr.appendChild(td); });
+      tb.appendChild(tr);
+    });
+  }
+  dash.onData(drawItems);
+  document.getElementById('au-search').addEventListener('input', (e) => { state.q = e.target.value.trim().toLowerCase(); drawItems(); });
+  document.getElementById('au-filter').addEventListener('change', (e) => { state.f = e.target.value; drawItems(); });
+  document.querySelectorAll('#au-items th button').forEach((b) => b.addEventListener('click', () => {
+    const k = b.dataset.k;
+    state.dir = state.k === k ? -state.dir : (numeric.has(k) ? -1 : 1);
+    state.k = k; drawItems();
+  }));
+})();
+</script>
+<p class="au-foot"><a href="tool.html" style="color:inherit">Xem bản chụp trang Campaign đo traffic trong DCPD Tool</a> · Bản chụp số liệu ngày 23/10/2026 từ DCPD Tool (Google Search Console + GA4). File mở trực tiếp trên trình duyệt, cần mạng để tải font và thư viện biểu đồ.</p>
+</div>
+</body>
+</html>
