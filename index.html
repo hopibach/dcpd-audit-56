@@ -289,10 +289,10 @@ html, body { margin: 0; background: var(--color-bg); color: var(--color-fg); fon
     const yI = d3.scaleLinear([0, d3.max(rows, (r) => r.impr) * 1.1], [H - 24, 8]).nice();
     const yC = d3.scaleLinear([0, d3.max(rows, (r) => r.clicks) * 1.2], [H - 24, 8]).nice();
     const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`);
-    const meas = svg.append('text').attr('font-size', 11).text(d3.format(',')(yI.domain()[1]));
-    const ml = meas.node().getComputedTextLength() + 10; meas.remove();
-    const meas2 = svg.append('text').attr('font-size', 11).text(String(yC.domain()[1]));
-    const mr = meas2.node().getComputedTextLength() + 10; meas2.remove();
+    const meas = svg.append('text').style('font-size', 'var(--cds-font-size-caption)').text(d3.format(',')(yI.domain()[1]));
+    const ml = meas.node().getComputedTextLength() + 14; meas.remove();
+    const meas2 = svg.append('text').style('font-size', 'var(--cds-font-size-caption)').text(String(yC.domain()[1]));
+    const mr = meas2.node().getComputedTextLength() + 14; meas2.remove();
     const x = d3.scaleBand(rows.map((r) => +r.date), [ml, W - mr]).padding(0.25);
     const g = svg.append('g');
     g.append('g').selectAll('line').data(yI.ticks(4)).join('line')
